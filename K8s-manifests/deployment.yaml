@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cg-exam-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cg-exam-app
+  template:
+    metadata:
+      labels:
+        app: cg-exam-app
+    spec:
+      containers:
+      - name: cg-exam-app
+        image: lucci7/cg-exam-app:v1.1
+        ports:
+        - containerPort: 5000
